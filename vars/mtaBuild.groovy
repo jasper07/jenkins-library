@@ -27,7 +27,6 @@ def call(Map parameters = [:]) {
         def mtaJar = getMtaJar(parameters)
 
         sh  """#!/bin/bash
-            #export PATH=./node_modules/.bin:${PATH}
             java -jar ${mtaJar} --mtar ${mtarFileName} --build-target=${buildTarget} build
             """
 
